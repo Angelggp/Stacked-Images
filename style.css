@@ -1,0 +1,76 @@
+body {
+  font-family: sans-serif;
+  background-image: url(img/pokeball.png);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 0; 
+  padding: 0; 
+}
+
+.images-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.images-container .image {
+  position: relative;
+  margin-right: -20px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.images-container .image img {
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.images-container .image .name {
+  position: absolute;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  display: none;
+  min-width: 100px;
+  width: 150px;
+  top: -70px;
+  padding: 10px 15px;
+}
+
+.images-container .image .name .text {
+  display: inline-block;
+  text-overflow: ellipsis; /*...*/
+  overflow: hidden; /*se oculta*/
+  white-space: nowrap;
+  margin: 0 auto;
+  width: 150px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.images-container .image:hover .name {
+  display: inline-block;
+  transform: translateY(-20px);
+  transform: translateX(-20px);
+}
+
+.images-container .image .name::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: 45%;
+  bottom: -20px;
+  border-top: 10px solid black;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.images-container .image:hover img {
+  transform: translateY(-3px);
+  cursor: pointer;
+}
